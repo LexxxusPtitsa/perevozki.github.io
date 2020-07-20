@@ -7,6 +7,131 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
+    <script>
+      function change(objName, min, max, step) {
+      var obj = document.getElementById(objName);
+      var tmp = +obj.value + step;
+      if (tmp<min) tmp=min;
+      if (tmp>max) tmp=max;
+      obj.value = tmp;
+      }
+    </script>
+    <div class="popup">
+      <div class="popup__inner">
+        <div class="popup__person">
+          <div class="popup__close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 10.586L16.95 5.63599L18.364 7.04999L13.414 12L18.364 16.95L16.95 18.364L12 13.414L7.04999 18.364L5.63599 16.95L10.586 12L5.63599 7.04999L7.04999 5.63599L12 10.586Z" fill="#05263F"/>
+</svg>
+          </div>
+          <div class="popup__header">
+            <div class="popup__buttons">
+              <div class="popup__button popup__button-profile popup__button--active">Профиль</div>
+              <div class="popup__button popup__button-history">История</div>
+            </div>
+          </div>
+          <div class="popup__profile popup__toggle popup__toggle--active">
+            <form class="popup__form" action="">
+              <div class="popup__form-input">
+                <label for="name">Имя</label>
+                <input type="text" name="name" id="name">
+              </div>
+              <div class="popup__form-input">
+                <label for="surname">Фамилия</label>
+                <input type="text" name="surname" id="surname">
+              </div>
+              <div class="popup__form-input">
+                <label for="email">Эл. почта</label>
+                <input type="email" name="email" id="email">
+              </div>
+              <div class="popup__form-input">
+                <label for="tel">Телефон *</label>
+                <input type="text" name="tel" id="tel">
+              </div>
+              <div class="popup__form-tip">Заполняя поля в профиле, вы автоматически даете согласие на обработку персональных данных.</div>
+              <button class="popup__form-button button" type="submit">Сохранить</button>
+            </form>
+          </div>
+          <div class="popup__history history popup__toggle">
+            <div class="history__about history__about--active">Все брони, которые вы оформляли на нашем сайте показаны в этом разделе.</div>
+            <div class="history__timetable history__timetable--active">
+              <table>
+                <thead>
+                  <tr>
+                    <td>Откуда — Куда</td>
+                    <td class="td_desc">Кол-во человек</td>
+                    <td class="td_desc">Дата оформления</td>
+                    <td class="td_mob">Кол-во / Дата</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Донецк — Харьков</td>
+                    <td class="td_desc">3 чел.</td>
+                    <td class="td_desc">12.06.2020</td>
+                    <td class="td_mob"> <span>12.06.2020</span><span>3 чел.</span></td>
+                  </tr>
+                  <tr>
+                    <td>Донецк — Ивано-Франковск</td>
+                    <td class="td_desc">1 чел.</td>
+                    <td class="td_desc">13.07.2020</td>
+                    <td class="td_mob"><span>13.07.2020</span><span>1 чел.</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="popup__auth">
+          <div class="auth">
+            <div class="popup__close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 10.586L16.95 5.63599L18.364 7.04999L13.414 12L18.364 16.95L16.95 18.364L12 13.414L7.04999 18.364L5.63599 16.95L10.586 12L5.63599 7.04999L7.04999 5.63599L12 10.586Z" fill="#05263F"/>
+</svg>
+            </div>
+            <div class="auth__inner">
+              <h2 class="auth__title">Войдите, чтобы продолжить</h2>
+              <form class="auth__form" action="">
+                <label for="num">Номер телефона *</label>
+                <input type="text" name="" id="num">
+                <button class="auth__button button" type="submit">Войти</button>
+              </form>
+            </div>
+            <p class="auth__tip">Нажимая кнопку «Войти», вы соглашаетесь получить SMS. За его отправку и обмен данными может взиматься плата.</p>
+          </div>
+        </div>
+        <div class="popup__auth-code">
+          <div class="auth">
+            <div class="popup__close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 10.586L16.95 5.63599L18.364 7.04999L13.414 12L18.364 16.95L16.95 18.364L12 13.414L7.04999 18.364L5.63599 16.95L10.586 12L5.63599 7.04999L7.04999 5.63599L12 10.586Z" fill="#05263F"/>
+</svg>
+            </div>
+            <div class="auth__inner">
+              <h2 class="auth__title">Подтвердите номер телефона</h2>
+              <p class="auth__tip auth__tip--second">Мы отправили код на номер <span>+380501232323</span>. Если вы не получили проверочный код, его можно будет отправить повторно через <span>0:13</span></p>
+              <form class="auth__form--code" action="">
+                <label for="code">6-значный код *</label>
+                <input type="num" name="" id="code">
+                <button class="auth__button button" type="submit">Продолжить</button>
+              </form>
+            </div><a class="auth__repeat" href="#">Отправить ещё раз</a>
+          </div>
+        </div>
+        <div class="popup__success">
+          <div class="success">
+            <div class="popup__close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 10.586L16.95 5.63599L18.364 7.04999L13.414 12L18.364 16.95L16.95 18.364L12 13.414L7.04999 18.364L5.63599 16.95L10.586 12L5.63599 7.04999L7.04999 5.63599L12 10.586Z" fill="#05263F"/>
+</svg>
+            </div>
+            <div class="success__inner">
+              <div class="success__text">
+                <h2 class="success__title">Заявка успешно отправлена!</h2>
+                <div class="success__desc">В ближайшее время наши диспетчеры свяжутся с вами и обсудят подробности вашей поездки.</div>
+              </div>
+              <button class="button success__button">Хорошо, спасибо</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="first">
       <div class="header">
         <div class="container">
@@ -62,10 +187,26 @@
               <div class="main__subtitle">Лучший способ забронировать билеты онлайн</div>
             </div>
             <form class="main__form form">
-              <input type="text" name="from" placeholder="Откуда">
+              <label for="from" id="label-from">
+                <input type="text" name="from" placeholder="Откуда" id="from"><svg id="swap" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12ZM20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12ZM9 17L5.5 14L9 11V13H13V15H9V17ZM15 7L18.5 10L15 13V11H11V9H15V7Z" fill="#05263F"/>
+</svg>
+              </label>
               <input type="text" name="to" placeholder="Куда">
               <input type="date" name="date" data-placeholder="Дата" required aria-required="true">
-              <input type="number" name="people" placeholder="1 чел.">
+              <label for="people" id="label-people">
+                <div class="people__buttons">
+                  <button type="button" value="-" onClick="change('people',0,10, -1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 11L19 11V13L5 13V11Z" fill="white"/>
+</svg>
+                  </button>
+                  <button type="button" value="+" onClick="change('people',0,10, 1);"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6L6 0L8 0L8 6L14 6V8H8L8 14H6L6 8L0 8L0 6L6 6Z" fill="white"/>
+</svg>
+                  </button>
+                </div>
+                <input type="text" name="people" min="1" value="1" placeholder="1 чел." id="people">
+              </label>
               <div class="form__desc">После бронирования билета наш оператор свяжется с вами для уточнения подробностей.</div>
               <div class="form__cost">
                 <div class="form__cost-name">Цена:</div>
