@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Перевозки ДНР-Украина</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css"><link  href="https://github.com/fengyuanchen/datepicker/blob/master/dist/datepicker.min.css" rel="stylesheet">
   </head>
   <body>
     <script>
@@ -155,8 +155,7 @@
                 <div class="menu__conts">
                   <h3 class="menu__conts-title">Контакты</h3>
                   <div class="menu__conts-phones"><a class="menu__conts-phone" href="#">+38 (050) 123-45-67</a><a class="menu__conts-phone" href="#">+38 (050) 123-45-67</a><a class="menu__conts-phone" href="#">+38 (050) 123-45-67</a><a class="menu__conts-phone" href="#">+38 (050) 123-45-67</a></div>
-                </div>
-                <div class="menu__email">support@name.com</div>
+                </div><a class="menu__email" href="#">support@name.com</a>
               </div>
             </div>
           </div>
@@ -183,7 +182,12 @@
 </svg>
               </label>
               <input type="text" name="to" placeholder="Куда">
-              <input type="date" name="date" data-placeholder="Дата" required aria-required="true">
+              <label for="date" id="label-date"><input name="date" placeholder="Дата" data-toggle="datepicker" id="date">
+<div data-toggle="datepicker"></div>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 3L21 3C21.2652 3 21.5196 3.10536 21.7071 3.29289C21.8946 3.48043 22 3.73478 22 4L22 20C22 20.2652 21.8946 20.5196 21.7071 20.7071C21.5196 20.8946 21.2652 21 21 21L3 21C2.73478 21 2.48043 20.8946 2.29289 20.7071C2.10536 20.5196 2 20.2652 2 20L2 4C2 3.73478 2.10536 3.48043 2.29289 3.29289C2.48043 3.10536 2.73478 3 3 3L7 3V1L9 1V3L15 3V1L17 1V3ZM15 5L9 5V7H7V5L4 5L4 9L20 9V5H17V7L15 7L15 5ZM20 11L4 11L4 19L20 19L20 11Z" fill="#05263F"/>
+</svg>
+              </label>
               <label for="people" id="label-people">
                 <div class="people__buttons">
                   <button type="button" value="-" onClick="change('people',0,10, -1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -277,12 +281,11 @@
     <div class="footer">
       <div class="container">
         <div class="footer__inner">
-          <div class="footer__copy">Copyright © 2020, ООО «Ваш Перевозчик»</div>
-          <div class="footer__email">support@name.com</div>
+          <div class="footer__copy">Copyright © 2020, ООО «Ваш Перевозчик»</div><a class="footer__email" href="#">support@name.com</a>
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script><script src="https://raw.githubusercontent.com/fengyuanchen/datepicker/master/dist/datepicker.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
   </body>
 </html>
