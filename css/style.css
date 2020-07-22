@@ -755,6 +755,8 @@ input {
         .popup__form-button {
           width: 160px;
           margin-top: 70px; } }
+  .popup__history {
+    height: 100%; }
   .popup__success {
     height: 100%; }
     @media screen and (min-width: 768px) {

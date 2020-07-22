@@ -1791,9 +1791,6 @@
       $('.popup__profile').addClass('popup__toggle--active');
     }
   });
-  jQuery(function ($) {
-    $("#tel, #num").mask("+38(999) 999-99-99"); // $("#people").mask("0 чел.");
-  });
 
   if (!$('.history__timetable').hasClass('history__timetable--active')) {
     $('.history__about').addClass('history__about--active');
@@ -1819,5 +1816,11 @@
   $('[data-toggle="datepicker"]').datepicker({
     language: 'ru-RU',
     format: 'dd.mm.yyyy'
+  });
+  jQuery(function ($) {
+    $("#tel, #num").mask("+38(999) 999-99-99");
+    $('#date').mask('99.99.9999', {
+      placeholder: "дд.мм.гггг"
+    });
   });
 })();
